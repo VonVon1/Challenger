@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: simple-html
+    build: .
+    container_name: index-static
+    restart: always
+    ports:
+      - "80:80"
