@@ -2,7 +2,8 @@ name: Push in ec2-prod
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   deploy:
