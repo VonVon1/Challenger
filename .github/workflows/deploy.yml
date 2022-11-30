@@ -1,20 +1,19 @@
-name: Push in ec2-prod
-
+name: Push EC2
 on:
   push:
-    branches:
-      - main
+   branches:
+    - main
 
 jobs:
   deploy:
     name: Deploy AWS
-    runs-on: ubuntu:18.04
+    runs-on: ubuntu-18.04
 
     steps:
-    - name: Checkout files
-      uses: actions/checkout@v3.1.0
+    - name: Checkout the files
+      uses: actions/checkout@v3
 
-    - name: ssh
+    - name: Copy file with SSH
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
