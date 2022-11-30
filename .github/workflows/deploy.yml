@@ -1,0 +1,23 @@
+name: Push in ec2-prod
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Deploy AWS
+    runs-on: ubuntu:18.04
+
+    steps:
+    - name: Checkout files
+      uses: actions/checkout@v3.1.0
+
+    - name: ssh
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
+        SOURCE: "./index"
+        REMOTE_HOST: "3.93.164.38"
+        REMOTE_USER: "ubuntu"
+        TARGET: "/home/ubuntu"
