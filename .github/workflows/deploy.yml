@@ -31,5 +31,5 @@ jobs:
         port: 22
         script: |
             #Logged in ec2.
-            cd ./Challenger/index
+            cd ./index
             docker-compose up --force-recreate --build -d
