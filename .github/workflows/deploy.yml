@@ -20,7 +20,7 @@ jobs:
         SOURCE: "./"
         REMOTE_HOST: ${{secrets.HOSTNAME}}
         REMOTE_USER: ${{secrets.USER_NAME}}
-        TARGET: "/home/ubuntu"
+        TARGET: ${{secrets.PATH_TARGET}}
 
     - name: Executing remote ssh commands using key pair
       uses: appleboy/ssh-action@master
