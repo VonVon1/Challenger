@@ -44,7 +44,7 @@
       dest: /usr/local/bin/docker-compose
       mode: 'u+x,g+x'
 
-  - name: Docker-compose permissions
+  - name: Docker-compose permission
     command: "sudo chmod +x /usr/local/bin/docker-compose"
 
 # - name: Ensure Nginx is at the latest version
