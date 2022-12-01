@@ -38,16 +38,16 @@
   - name: Docker group 
     command: "sudo usermod -aG docker ubuntu"
 
-  - name: Ensure Nginx is at the latest version
-    apt:
-      name: nginx
-      state: latest
-    become: yes
-    
-  - name: Make sure Nginx service is running
-    systemd:
-      state: started
-      name: nginx
-    become: yes
+# - name: Ensure Nginx is at the latest version
+#   apt:
+#     name: nginx
+#     state: latest
+#   become: yes
+#   
+# - name: Make sure Nginx service is running
+#   systemd:
+#     state: started
+#     name: nginx
+#   become: yes
 
   

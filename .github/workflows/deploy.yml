@@ -17,7 +17,19 @@ jobs:
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
-        SOURCE: "./index"
-        REMOTE_HOST: "34.204.9.228"
-        REMOTE_USER: "ubuntu"
+        SOURCE: "./"
+        REMOTE_HOST: ${{secrets.HOSTNAME}}
+        REMOTE_USER: ${{secrets.USER_NAME}}
         TARGET: "/home/ubuntu"
+
+    - name: Executing remote ssh commands using key pair
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{secrets.HOSTNAME}}
+        key: ${{secrets.EC2_SSH_KEY}}
+        username: ${{secrets.USER_NAME}}
+        port: 22
+        script: |
+            #Logged in ec2.
+            cd ./Challenger/index
+            docker-compose up --force-recreate --build -d
