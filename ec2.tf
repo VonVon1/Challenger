@@ -84,7 +84,7 @@ resource "aws_route_table_association" "route_table_association" {
 resource "aws_instance" "ec2_prod" {
   ami                         = "ami-0ee23bfc74a881de5" # us-east-1
   subnet_id                   = aws_subnet.prod_subnet.id
-  instance_type               = "t2.micro"
+  instance_type               = "t3.medium"
   associate_public_ip_address = true
   security_groups             = [aws_security_group.sg_nginx.id]
   key_name                    = local.key_name 
