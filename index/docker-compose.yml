@@ -6,4 +6,4 @@ services:
     container_name: index-static
     restart: always
     ports:
-      - "80:80"
+      - "81:80"

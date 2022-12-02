@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+
+  python:
+    image: coodesh-app
+    build: .
+    container_name: coodesh-container
+    restart: always
+    environment:
+      - APP_NAME=Coodesh
+    ports:
+      - "5000:5000"
+  
+  nginx:
+    image: nginx-app
+    build: ./nginx
+    container_name: nginx-container
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - python 

@@ -33,3 +33,6 @@ jobs:
             #Logged in ec2.
             cd ./index
             docker-compose up --force-recreate --build -d
+            cd /home/${{secrets.USER_NAME}}/python
+            docker-compose up --force-recreate --build -d
+            
