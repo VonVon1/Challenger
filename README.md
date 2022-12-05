@@ -2,7 +2,7 @@
 
 Este repositório tem como objetivo construir uma infraestrutura na aws com terraform
 provisionar o servidor com ansible,dockerizar e deployar uma página HTML estática servida pelo nginx com docker
-deployar uma aplcação python(que puxa as métricas de memória e CPU da máquina e mostra a saída em formtado JSON
+deployar uma aplicação python(que puxa as métricas de memória,CPU,disk e read,write(disk) da máquina e mostra a saída em formtado JSON
 servida pelo nginx com docker e construir uma pipeline githubactions para o deploy automatizado do código.
 
 ##  Diagrama do projeto
